@@ -1,6 +1,6 @@
 # ================================================================ #
 #                                                                  #
-# Лабораторная работа #2                                           #
+# Лабораторная работа #4-5                                         #
 # Работу выполнил Болдак Дмитрий Алексеевич                        #
 #                                                                  #
 #                                                                  #
@@ -16,7 +16,7 @@ import sys
 import warnings
 import numpy as np
 
-# My own lib for mathematics
+# Моя библиотека для удобного построения графиков и не только
 import my_powerful_lib as mpl
 
 
@@ -29,6 +29,14 @@ def f2(x, y):
     return np.cos(y - 1) + x - 0.7
 
 
+def f3(x):
+    return np.arccos(0.7 - x) + 1
+
+
+def f4(x, n=0):
+    return np.arccos((-1) ** n * (0.7 - x)) + 1 - n * np.pi
+
+
 if __name__ == "__main__":
     # Отключение вывода некоторых уведомлений
     if not sys.warnoptions:
@@ -38,8 +46,10 @@ if __name__ == "__main__":
     sys.setrecursionlimit(500)
 
     # нарисуем функцию и её производной на промежутке заданном впараметрах проагрммы сверху
-    mpl.build_function_x(f1, 0.01, "Первая функция системы")
-    mpl.build_function_xy(f2, 0.01, "← Вторая функция системы", legend_x=0.5)
+    mpl.build_function_x(f1, 0.001, "Первая функция системы")
+    # mpl.build_function_x(f3, 0.001, "Первая функция системы")
+    # mpl.build_function_x(f6, 0.001, "Первая функция системы")
+    mpl.build_function_xy(f2, 0.01, "Вторая функция системы")
     mpl.show_plot()
 
     print(f2(0.5, 1))
