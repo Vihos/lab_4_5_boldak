@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 accuracy = 10 ** -5
 
 # Промежуткиы отрисовки функции
-START_X = -5
-END_X = 5
-START_Y = -10
-END_Y = 5
+START_X = -2
+END_X = 2
+START_Y = -2
+END_Y = 2
 
 
 # Проверка является ли значение функции бесконечностью

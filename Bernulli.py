@@ -26,17 +26,17 @@ def f2(x, y):
 
 
 if __name__ == "__main__":
-    mpl.build_function_xy(f2, 0.01, "Первая функция системы")
-    mpl.show_plot()
+    # mpl.build_function_xy(f2, 0.01, "Первая функция системы")
+    # mpl.show_plot()
 
-    # mpl.bar_chart(
-    #     [20, 35, 30, 35, 27],
-    #     ["Бернули", "test 2", "test 3", "test 4", "test 5"],
-    #     "Производительность",
-    #     "Методы",
-    #     "Миллисекунды",
-    #     graph_params=[0, 51, 5]
-    # )
+    mpl.bar_chart(
+        [20, 35, 30, 35, 27],
+        ["Бернули", "test 2", "test 3", "test 4", "test 5"],
+        "Производительность",
+        "Методы",
+        "Миллисекунды",
+        graph_params=[0, 51, 5]
+    )
     #
     # start = time.time()
     # time.sleep(1)
