@@ -18,7 +18,7 @@ import numpy as np
 from scipy.misc import derivative
 
 # Моя библиотека для удобного построения графиков и не только
-import my_powerful_lib as mpl
+import powerful_lib as mpl
 
 # Константы
 accuracy = 0.00001
@@ -148,8 +148,21 @@ if __name__ == "__main__":
     # print()
 
     try:
-        print("Метод ньютона:")
+        print("Метод ньютона #1:")
+        temp = newton_piston(-1, -1, f3, f4, 0)
+        print_result(temp[0], temp[1], temp[2], temp[3], temp[4])
+        print()
+        print("Метод ньютона #2:")
+        temp = newton_piston(-1, 1, f3, f4, 0)
+        print_result(temp[0], temp[1], temp[2], temp[3], temp[4])
+        print()
+        print("Метод ньютона #3:")
         temp = newton_piston(1, -1, f3, f4, 0)
         print_result(temp[0], temp[1], temp[2], temp[3], temp[4])
+        print()
+        print("Метод ньютона #4:")
+        temp = newton_piston(1, 1, f3, f4, 0)
+        print_result(temp[0], temp[1], temp[2], temp[3], temp[4])
+        print()
     except Exception as e:
         print(e)

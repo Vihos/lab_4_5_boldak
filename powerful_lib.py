@@ -22,8 +22,8 @@ def is_nan(arg):
 # legend - подпись
 # x_from - начало отрисовки функции
 # x_to - конец отрисовки функции
-def build_function_x(func, dx=0.01, legend="", x_from=START_X, x_to=END_X):
-    plt.axis([START_X, END_X, START_Y, END_Y])
+def build_function_x(func, dx=0.01, legend="", x_from=START_X, x_to=END_X, y_from=START_Y, y_to=END_Y, argument=None):
+    plt.axis([x_from, x_to, y_from, y_to])
     plt.grid(True)
     plt.axhline(y=0, color='k')
     plt.axvline(x=0, color='k')
@@ -31,10 +31,17 @@ def build_function_x(func, dx=0.01, legend="", x_from=START_X, x_to=END_X):
     x = np.arange(x_from, x_to, dx)
 
     if len(legend) > 0:
-        plt.plot(x, func(x), label=legend)
+        if argument is not None:
+            plt.plot(x, func(x, argument), label=legend)
+        else:
+            plt.plot(x, func(x), label=legend)
+
         plt.legend()
     else:
-        plt.plot(x, func(x))
+        if argument is not None:
+            plt.plot(x, func(x, argument))
+        else:
+            plt.plot(x, func(x))
 
 
 # Строит график неявно заданной функцию f(x,y) = 0
